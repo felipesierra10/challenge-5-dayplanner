@@ -14,9 +14,32 @@ $(function () {
 
   console.log(currentHour)
 
-  for (let i = 9; i < 18; i++) {
 
 
+
+
+
+
+
+
+
+
+
+
+
+for (let i = 9; i < 18; i++) {
+    var timeBlock=$("#hour-+i")
+if (i===currentHour){
+  
+timeBlock.addClass("present")
+
+}
+else if(currentHour>i){
+  timeBlock.addClass("past")
+}
+else{
+  timeBlock.addClass("future")
+}
   }
 
   // TODO: Add a listener for click events on the save button. This code should
