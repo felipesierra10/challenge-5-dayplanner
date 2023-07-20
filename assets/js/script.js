@@ -13,8 +13,8 @@ $(function () {
   console.log(currentHour)
 
 
-  for (let i = 9; i < 24; i++) {
-    var timeBlock = $("#hour-+i")
+  for (let i = 9; i < 18; i++) {
+    var timeBlock = $("#hour-" + i)
     var event = localStorage.getItem("hour-" + i)
 
     console.log(event)
@@ -32,16 +32,17 @@ $(function () {
     }
   }
 
-  
-});
 
-$(function () {
+
+
+
 
   function saveEvent(event) {
-    var currentButton = $(event.target)
+    event.preventDefault()
+    var currentButton = $(this)
     var textArea = currentButton.siblings("textarea")
     var parentId = currentButton.parent().attr("id")
-    alert(textArea.val() + " " + parentId)
+    console.log(textArea.val() + " " + parentId)
 
     localStorage.setItem(parentId, textArea.val())
 
